@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            padding: 10px;
+            color: white;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #f2f2f2;
+            padding: 10px;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        .filter-section {
+            margin-top: 20px;
+        }
+
+        .chart-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .chart {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 10px;
+            text-align: center;
+        }
+
+        select {
+            width: 150px;
+        }
+
+        button {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .subscription-buttons, .other-buttons, .banks-dropdown, .apply-clear-buttons {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Your Dashboard</h1>
+</header>
+
+<nav>
+    <button onclick="location.href='your.html'">Your</button>
+    <button onclick="location.href='all.html'">All</button>
+    <button onclick="location.href='blocked.html'">Blocked</button>
+    <input type="text" placeholder="Search...">
+    <button onclick="toggleFilter()">Filter</button>
+</nav>
+
+<section id="content" class="filter-section">
+    <div class="subscription-buttons">
+        <button onclick="changeFilterType('subscription')">Subscription</button>
+    </div>
+    <div class="other-buttons">
+        <button onclick="changeFilterType('burner')">Burner</button>
+        <button onclick="showCardHolders()">Card Holders</button>
+    </div>
+    <div class="banks-dropdown">
+        <select id="banks">
+            <option value="bank1">Bank 1</option>
+            <option value="bank2">Bank 2</option>
+            <option value="bank3">Bank 3</option>
+        </select>
+    </div>
+    <div class="apply-clear-buttons">
+        <button onclick="applyFilters()">Apply</button>
+        <button onclick="clearFilters()">Clear</button>
+    </div>
+</section>
+
+<script>
+    function toggleFilter() {
+        const subscriptionButtons = document.querySelector('.subscription-buttons');
+        const otherButtons = document.querySelector('.other-buttons');
+        const banksDropdown = document.querySelector('.banks-dropdown');
+        const applyClearButtons = document.querySelector('.apply-clear-buttons');
+
+        if (subscriptionButtons.style.display === 'none') {
+            // Show functionalities
+            subscriptionButtons.style.display = 'block';
+            otherButtons.style.display = 'block';
+            banksDropdown.style.display = 'block';
+            applyClearButtons.style.display = 'block';
+        } else {
+            // Hide functionalities
+            subscriptionButtons.style.display = 'none';
+            otherButtons.style.display = 'none';
+            banksDropdown.style.display = 'none';
+            applyClearButtons.style.display = 'none';
+        }
+    }
+
+    function changeFilterType(type) {
+        // Implement logic to change filter type (subscription/burner)
+        // Update content accordingly
+    }
+
+    function showCardHolders() {
+        // Implement logic to show card holders dropdown
+    }
+
+    function applyFilters() {
+        // Implement logic to apply selected filters
+        // Update content accordingly
+        console.log("Filters Applied!");
+    }
+
+    function clearFilters() {
+        // Implement logic to clear selected filters
+        // Update content accordingly
+        console.log("Filters Cleared!");
+    }
+</script>
+
+</body>
+</html>
